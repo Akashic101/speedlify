@@ -3,7 +3,7 @@ module.exports = {
 	description: "All of my own websites",
 	options: {
 		runs: 1,
-		frequency: 60 * 23, // (in minutes)
+		frequency: 1, // (in minutes)
 	},
 	urls: [
 		"https://blog.davidmoll.net/"
