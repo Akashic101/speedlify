@@ -105,18 +105,16 @@ async function tryToPreventNetlifyBuildTimeout(dateTestsStarted, numberOfUrls, e
 
 		let runCount =
 			group.options && group.options.runs ? group.options.runs : NUMBER_OF_RUNS;
-			let options = Object.assign({
-				executablePath: '/usr/bin/chromium-browser', // Path to Chromium executable
-				chromeFlags: ['--headless', '--disable-dev-shm-usage', '--no-sandbox']
-			}, group.options);
-			
+		let options = Object.assign({
+			executablePath: '/usr/bin/chromium-browser',
+			chromeFlags: ['--headless', '--disable-dev-shm-usage']
+		}, group.options);
 
-			let results = await PerfLeaderboard(
-				group.urls,
-				runCount,
-				options,
-			);
-			
+		let results = await PerfLeaderboard(
+			group.urls,
+			runCount,
+			options,
+		);
 
 		let promises = [];
 		for(let result of results) {
