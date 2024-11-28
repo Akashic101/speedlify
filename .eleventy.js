@@ -422,21 +422,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setServerOptions({
     onRequest: {
       "/api/4d33473e.json": function({ url, method }) {
-        // Check if the HTTP method is not GET
-        if (method !== "GET") {
-          return {
-            status: 405, // Method Not Allowed
-            headers: {
-              "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*",  // Replace "*" with a specific domain if needed
-              "Access-Control-Allow-Methods": "GET",
-              "Access-Control-Allow-Headers": "Content-Type, Authorization"
-            },
-            body: JSON.stringify({ error: "Method Not Allowed" })
-          };
-        }
-
-        // Add CORS headers for GET requests
         return {
           status: 200,
           headers: {
