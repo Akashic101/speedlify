@@ -430,7 +430,6 @@ module.exports = function (eleventyConfig) {
             "Access-Control-Allow-Methods": "GET",
             "Access-Control-Allow-Headers": "Content-Type, Authorization"
           },
-          body: JSON.stringify({ message: "Hello, this is the API response!" }) // Or your actual API response
         };
       }
     }
